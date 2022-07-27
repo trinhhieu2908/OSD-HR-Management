@@ -1,0 +1,86 @@
+.header {
+    height: 70px;
+    background-color: $base-color;
+    position: fixed;
+    top: 0;
+    width: 80%;
+    margin-left: 10%;
+    overflow: hidden;
+    border-bottom: 2px solid rgba(48, 48, 48, 0.3);
+    .ant-row {
+        height: 100%;
+    }
+}
+
+.header-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    &::after {
+        content: "";
+        height: 45%;
+        width: 1px;
+        position: absolute;
+        right: 0;
+        top: 25%;
+        background-color: rgba(48, 48, 48, 0.3);
+    }
+}
+
+.header-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 15px;
+    .ant-menu-horizontal {
+        width: 100%;
+        justify-content: start;
+        align-items: center;
+        background-color: transparent;
+        .ant-menu-item-selected {
+            .ant-menu-title-content {
+                color: tomato;
+            }
+            &::after {
+                border: none !important;
+            }
+        }
+        .ant-menu-item-active {
+            &::after {
+                border: none !important;
+            }
+        }
+        .ant-menu-item {
+            margin-left: 10px;
+            margin-right: 10px;
+            &::after {
+                border: none !important;
+            }
+        }
+    }
+    .ant-menu-title-content {
+        font-size: 18px;
+    }
+}
+
+.header-user {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    padding: 15px;
+    &__name {
+        font-size: 18px;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+    &__avatar {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+        background-color: black;
+    }
+}

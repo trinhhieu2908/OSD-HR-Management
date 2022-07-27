@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+@import './abstracts/mixins';
+@import './abstracts/variables';
+@import './abstracts/functions';
+@import './base/animations';
+@import "./base/base";
+@import "./base/utilities.scss";
+
+//pages
+@import "../pages/Login/style.scss";
+
+//component - Commons
+@import "../Components/Commons/Header/style.scss";
+@import "../Components/Commons/Layout/style.scss";
+@import "../Components/Commons/Footer/style.scss";
