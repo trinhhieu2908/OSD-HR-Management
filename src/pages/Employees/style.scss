@@ -1,0 +1,27 @@
+.employee-item {
+    background: white;
+    flex-direction: column;
+    padding: 15px;
+    img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        height: 270px;
+    }
+    h6 {
+        margin-top: 12px;
+    }
+    i {
+        color: black;
+        font-size: large;
+    }
+    a, p {
+        font-size: large;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0 !important;
+    }
+    a {
+        color: #337ab7 !important;
+    }
+}
