@@ -1,7 +1,6 @@
 import { Col, Typography } from "antd";
-import React from "react";
 import { Link } from "react-router-dom";
-import avatar from "../../assets/ava.jpg";
+import avatar from "../../../../assets/ava.jpg";
 
 type Props = {
   employee: {

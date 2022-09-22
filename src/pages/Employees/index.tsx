@@ -1,4 +1,4 @@
-import EmployeeList from "../../Components/Employees/EmployeeList";
+import EmployeeList from "../../Components/Employees/components/EmployeesPortal/EmployeeList";
 
 const Employees = () => {
     const list = [

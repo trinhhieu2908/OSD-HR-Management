@@ -5,21 +5,18 @@ import axios from 'axios';
 import { getAccessToken } from './token-config';
 
 const axiosConfig = axios.create({
-	baseURL: process.env.REACT_APP_BASE_URL,
+	baseURL: "https://k69gstcamh.execute-api.ap-southeast-1.amazonaws.com/Prod/api",
 	headers: {
 		'content-type': 'application/json',
 	},
 });
 axiosConfig.interceptors.request.use(async (config) => {
 	if (getAccessToken()) {
-		config.headers!.token = `Bearer ${getAccessToken() as string}`;
+		config.headers!.token = `${getAccessToken() as string}`;
 	}
 	return config;
 });
-axiosConfig.interceptors.response.use(async (response) => {
-	if (response && response.data) {
-		return response.data;
-	}
+axiosConfig.interceptors.response.use(async (response) => {	
 	return response;
 }, (error) => {
 	if (error.response) {

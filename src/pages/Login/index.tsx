@@ -1,9 +1,12 @@
 import { Form, Input, Button } from 'antd';
 import { MailOutlined, LockOutlined } from '@ant-design/icons';
+import { useLogin } from '../../Components/Authentication/hooks/useLogin';
+import { LoginRequestPayload } from '../../models/user';
 
 const Login = () => {
-  const onFinish = (data: any) => {
-    console.log('finished login', data);
+  const { mutate: loginUser, isLoading } = useLogin()
+  const onFinish = (data: LoginRequestPayload) => {
+    loginUser(data);
   };
   return (
     <div className="login">
