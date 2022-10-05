@@ -1,10 +1,10 @@
 import { Form, Input, Button } from 'antd';
 import { MailOutlined, LockOutlined } from '@ant-design/icons';
-import { useLogin } from '../../Components/Authentication/hooks/useLogin';
 import { LoginRequestPayload } from '../../models/user';
+import { authenticationHooks } from '../../Components/Authentication/hooks';
 
 const Login = () => {
-  const { mutate: loginUser, isLoading } = useLogin()
+  const { mutate: loginUser, isLoading } = authenticationHooks.useLogin()
   const onFinish = (data: LoginRequestPayload) => {
     loginUser(data);
   };

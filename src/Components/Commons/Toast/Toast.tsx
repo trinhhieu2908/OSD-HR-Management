@@ -11,7 +11,9 @@ export const successMessage = (params: ISuccessMessageProps): ReturnType<typeof 
 type ISuccessMessageProps = { successMessage?: string };
 
 export const errorMessage = (params: IErrorMessageProps): ReturnType<typeof toast.error> => {
-    const msg = <span>{params?.errorMessage}</span>;
+    const msg = <span style={{color: 'red'}} >{params?.errorMessage}</span>;
+
+    console.log(params.errorMessage)
 
     return toast.error(msg, {
         toastId: params?.errorMessage,

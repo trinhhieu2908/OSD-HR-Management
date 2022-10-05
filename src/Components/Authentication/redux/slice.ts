@@ -1,9 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { AuthenticationState } from '../../../models/authenticate';
+import { User } from '../../../models/user';
+
+const initialUser : User = {
+    userId: '',
+    fullName: '',
+    avatar: '',
+    role: 'Employee',
+    isActive: false,
+    jobTitle: '',
+    email: '',
+    phoneNumber: '',
+    skype: '',
+
+}
 
 export const initialState: AuthenticationState = {
     isLoading: false,
-    user: undefined,
+    user: initialUser,
     isAuthenticated: false,
 };
 

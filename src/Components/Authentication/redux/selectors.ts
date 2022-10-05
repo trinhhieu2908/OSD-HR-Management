@@ -1,9 +1,9 @@
 import { RootState } from "../../../Configs/configureStore";
-import { Employee } from "../../../models/authenticate";
+import { User } from "../../../models/user";
 
 
 const isUserAuthenticated = (state: RootState): boolean => state?.authentication?.isAuthenticated;
 
-const getCurrentUser = (state: RootState): Employee => state.authentication?.user;
+const getCurrentUser = (state: RootState): User => state.authentication?.user;
 
 export const authenticationSelectors = { isUserAuthenticated, getCurrentUser };

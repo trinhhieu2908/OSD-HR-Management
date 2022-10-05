@@ -12,11 +12,11 @@ const axiosConfig = axios.create({
 });
 axiosConfig.interceptors.request.use(async (config) => {
 	if (getAccessToken()) {
-		config.headers!.token = `${getAccessToken() as string}`;
+		config.headers!.authorization = `Bearer ${getAccessToken() as string}`;
 	}
 	return config;
 });
-axiosConfig.interceptors.response.use(async (response) => {	
+axiosConfig.interceptors.response.use(async (response) => {
 	return response;
 }, (error) => {
 	if (error.response) {
