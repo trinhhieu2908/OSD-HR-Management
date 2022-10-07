@@ -14,3 +14,19 @@ export interface User {
     phoneNumber?: string;
     skype?: string;
 }
+
+export type UserCreateRequestPayload = {
+    username: string;
+    password: string;
+    role: string;
+    email: string;
+    fullName: string;
+}
+
+export enum UserRole {
+    EMPLOYEE = 'Employee',
+    TEAM_LEAD = 'Team Lead',
+    ADMIN_HR = 'Admin HR',
+    ACCOUNTANT = 'Accountant',
+    ADMIN_SYSTEM = 'Admin System'
+}

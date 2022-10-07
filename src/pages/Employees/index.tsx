@@ -1,4 +1,5 @@
 import EmployeeList from "../../Components/Employees/components/EmployeesPortal/EmployeeList";
+import { employeesHooks } from "../../Components/Employees/hooks";
 
 const Employees = () => {
     const list = [
@@ -51,6 +52,11 @@ const Employees = () => {
         team: 'Raccoon'
       },
     ]
+
+    const { data, isLoading} = employeesHooks.useUsersPortal({})
+
+    console.log(data)
+
     return (
       <EmployeeList employeeList={list} />
     );

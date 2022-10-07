@@ -1,0 +1,4 @@
+export const FORM_STEPS = {
+    USER_ROLE: 'USER_ROLE',
+    USER_DETAILS: 'USER_DETAILS',
+};

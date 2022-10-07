@@ -10,6 +10,7 @@ import { getAccessToken } from '../Utils/token-config';
 import { authenticationHooks } from '../Components/Authentication/hooks';
 import { useDispatch } from 'react-redux';
 import { actions as authActions } from "../Components/Authentication/redux/slice";
+import { ADMIN_ROUTES } from './adminRoutes';
 
 export type RoutesTableType = {
 	id?: string;
@@ -52,7 +53,7 @@ function AppRoutes() {
 	const { data: user, isLoading: isDecodingToken } = authenticationHooks.useDecodeToken(accessToken!)
 
 	useEffect(() => {
-		if (user) {			
+		if (user) {
 			dispatch(authActions.setUser(user));
 		}
 	}, [user])
@@ -60,25 +61,33 @@ function AppRoutes() {
 	return (
 		<>
 			{!isDecodingToken ?
-			<BrowserRouter>
-				<Routes>
-					<Route
-						path='/'
-						element={isAuthenticated && userInfo.isActive ? <Layout /> : <Navigate to="/login" />}
-					>
-						{renderRoutes(PRIVATE_ROUTES)}
-					</Route>
-					<Route
-						path="login"
-						element={isAuthenticated && userInfo.isActive ? <Navigate to="/home" /> : <Login />}
-					/>
-					<Route
-						path="*"
-						element={<NotFound />}
-					/>
-				</Routes>
-			</BrowserRouter> : <div>Loading...</div>}
-		</>		
+				<BrowserRouter>
+					<Routes>
+						<Route
+							path='/'
+							element={isAuthenticated && userInfo.isActive ? <Layout /> : <Navigate to="/login" />}
+						>
+							{renderRoutes(PRIVATE_ROUTES)}
+						</Route>
+						{userInfo.role === 'Admin' &&
+							<Route
+								path='/admin'
+								element={isAuthenticated && userInfo.isActive ? <Layout /> : <Navigate to="/login" />}
+							>
+								{renderRoutes(ADMIN_ROUTES)}
+							</Route>
+						}
+						<Route
+							path="login"
+							element={isAuthenticated && userInfo.isActive ? <Navigate to="/home" /> : <Login />}
+						/>
+						<Route
+							path="*"
+							element={<NotFound />}
+						/>
+					</Routes>
+				</BrowserRouter> : <div>Loading...</div>}
+		</>
 	);
 }
 export default AppRoutes;

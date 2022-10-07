@@ -123,3 +123,12 @@
     transform: scale(1);
   }
 }
+
+@keyframes active {
+  from {
+    transform: scale(0.97);
+  }
+  to {
+    transform: scale(1);
+  }
+}

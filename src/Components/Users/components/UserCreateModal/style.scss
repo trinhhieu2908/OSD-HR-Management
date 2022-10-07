@@ -1,0 +1,71 @@
+.user-create {
+    &__modal {
+        min-width: 1200px;
+        .ant-modal-body {
+            height: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+    }
+    &__header {
+        margin-top: 40px;
+        margin-bottom: 60px;
+        &__step {
+            span {
+                font-size: 14px;
+            }
+        }
+        &__title {
+            margin-top: 10px;
+            font-size: 34px;
+        }
+        &__description {
+            font-size: 18px;
+        }
+    }
+    &__role-radio {
+        border: 1px solid;
+        border-radius: 10px;
+        justify-content: space-around;
+        align-items: center !important;
+        width: 160px;
+        height: 180px;
+        flex-direction: column;
+        transition: 0.3s all;
+        span {
+            font-size: 16px;
+            font-weight: 500;
+        }
+        &:hover {
+            border-color: #1890ff;
+        }
+    }
+    .ant-radio-wrapper-checked {
+        border: 2px solid;
+        border-color: #1890ff;
+    }
+    &__action {
+        margin-top: 100px;
+        display: flex;
+        justify-content: flex-end;
+        &__btn-cancel {
+            margin-right: 10px;
+            height: 38px;
+            &:hover {
+                border-color: #eb4022;
+            }
+        }
+        &__btn-submit {
+            height: 38px;
+            background-color: #1890ff !important;
+            span {
+                color: #fff;
+            }
+            &-disabled {
+                background-color: #80bbf1 !important;
+                cursor: not-allowed;
+            }
+        }
+    }
+}
